@@ -3,7 +3,6 @@ name: Build and push Docker image to dockerhub
 on:
   push:
     branches: [ "master" ]
-  workflow_dispatch:
 
 jobs:
   build:
@@ -21,6 +20,6 @@ jobs:
     - name: Build and push to dockerhub
       uses: docker/build-push-action@v5
       with:
-       context: .
+       context: ./backend
        push: true
        tags: martinanajdovska/unsent-message-project:latest
