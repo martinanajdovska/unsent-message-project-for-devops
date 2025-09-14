@@ -17,6 +17,6 @@ public class Message {
     @GeneratedValue(strategy = GenerationType.IDENTITY)
     private Long id;
     private String message;
-    private String sender;
+    private String receiver;
     private LocalDate date;
 }

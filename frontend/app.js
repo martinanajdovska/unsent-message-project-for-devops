@@ -50,7 +50,7 @@ async function fetchMessages() {
 
             card.innerHTML = `
                 <div class="card-body">
-                    <p class="card-text fw-bold">By: ${message.sender}</p>
+                    <p class="card-text fw-bold">To: ${message.receiver}</p>
                     <p class="card-text">${message.message}</p>
                     <p class="card-text">${message.date}</p>
                 </div>

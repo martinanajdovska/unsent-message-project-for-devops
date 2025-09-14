@@ -22,9 +22,9 @@ public class MessagesApi {
     }
 
     @PostMapping("/add")
-    public ResponseEntity<Message> saveMessage(@RequestParam String text, @RequestParam String sender) {
+    public ResponseEntity<Message> saveMessage(@RequestParam String text, @RequestParam String receiver) {
         return this.messageService
-                .add(text, sender)
+                .add(text, receiver)
                 .map(message -> ResponseEntity.ok().body(message))
                 .orElseGet(() -> ResponseEntity.badRequest().build());
     }

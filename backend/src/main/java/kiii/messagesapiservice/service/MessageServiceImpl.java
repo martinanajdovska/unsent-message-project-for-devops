@@ -22,9 +22,9 @@ public class MessageServiceImpl implements MessageService {
     }
 
     @Override
-    public Optional<Message> add(String message, String sender) {
+    public Optional<Message> add(String message, String receiver) {
         Message msg = new Message();
-        msg.setSender(sender);
+        msg.setReceiver(receiver);
         msg.setMessage(message);
         msg.setDate(LocalDate.now());
         messageRepository.save(msg);
