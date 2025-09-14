@@ -2,8 +2,9 @@ name: Build and push Docker image to dockerhub
 
 on:
   push:
-    branches: [ "main" ]
-    
+    branches: [ "master" ]
+  workflow_dispatch:
+
 jobs:
   build:
     runs-on: ubuntu-latest
