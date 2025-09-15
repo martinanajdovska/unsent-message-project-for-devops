@@ -11,7 +11,7 @@ document.addEventListener('DOMContentLoaded', () => {
             e.preventDefault();
 
             const text = document.getElementById('text').value.trim();
-            const sender = document.getElementById('sender').value.trim();
+            const receiver = document.getElementById('receiver').value.trim();
 
             try {
                 const response = await fetch('http://localhost:8080/api/add', {
@@ -19,7 +19,7 @@ document.addEventListener('DOMContentLoaded', () => {
                     headers: {
                         'Content-Type': 'application/x-www-form-urlencoded',
                     },
-                    body: new URLSearchParams({text, sender})
+                    body: new URLSearchParams({text, receiver})
                 });
 
                 if (response.ok) {

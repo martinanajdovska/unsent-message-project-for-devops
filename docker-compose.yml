@@ -12,9 +12,7 @@ services:
       - postgres_data:/var/lib/postgresql/data
 
   backend:
-    build:
-      context: ./backend
-      dockerfile: ./Dockerfile
+    image: martinanajdovska/unsent-message-project:latest
     restart: always
     ports:
       - '8080:8080'
