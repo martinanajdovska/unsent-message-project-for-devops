@@ -12,7 +12,7 @@ services:
       - postgres_data:/var/lib/postgresql/data
 
   backend:
-    image: martinanajdovska/unsent-message-project:latest
+    image: martinanajdovska/unsent-message-project-backend:latest
     restart: always
     ports:
       - '8080:8080'
@@ -26,10 +26,7 @@ services:
 
   frontend:
     container_name: 'frontend'
-    build:
-      context: ./frontend
-      dockerfile: ./Dockerfile
-    image: nginx:latest
+    image: martinanajdovska/unsent-message-project-frontend:latest
     restart: always
     ports:
       - '5173:80'
