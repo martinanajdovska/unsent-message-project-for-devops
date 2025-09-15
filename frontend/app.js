@@ -13,7 +13,7 @@ if (form) {
         const receiver = document.getElementById('receiver').value.trim();
 
         try {
-            const response = await fetch('http://localhost:8080/api/add', {
+            const response = await fetch('http://backend:8080/api/add', {
                 method: 'POST',
                 headers: {
                     'Content-Type': 'application/x-www-form-urlencoded',
@@ -35,7 +35,7 @@ if (form) {
 
 async function fetchMessages() {
     try {
-        const response = await fetch('http://localhost:8080/api');
+        const response = await fetch('http://backend:8080/api');
         const messages = await response.json();
 
         const messageList = document.getElementById('messages');
