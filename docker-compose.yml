@@ -12,7 +12,12 @@ services:
       - postgres_data:/var/lib/postgresql/data
 
   backend:
+    #    kubernetes
     image: martinanajdovska/unsent-message-project-backend:latest
+    #    docker
+    #    build:
+    #      context: ./backend
+    #      dockerfile: Dockerfile
     restart: always
     ports:
       - '8080:8080'
@@ -25,11 +30,20 @@ services:
       - db
 
   frontend:
-    container_name: 'frontend'
+    #kubernetes
     image: martinanajdovska/unsent-message-project-frontend:latest
+
+    #docker
+    #    build:
+    #      context: ./frontend
+    #      dockerfile: Dockerfile
     restart: always
     ports:
       - '5173:80'
+
+    #docker
+#    volumes:
+#      - ./frontend:/usr/share/nginx/html
 
 
 volumes:

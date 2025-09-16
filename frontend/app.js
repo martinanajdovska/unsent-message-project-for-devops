@@ -13,7 +13,9 @@ if (form) {
         const receiver = document.getElementById('receiver').value.trim();
 
         try {
-            const response = await fetch('/api/add', {
+            // const response = await fetch('http://localhost:8080/api/add'//docker
+            const response = await fetch('/api/add'//kubernetes
+             , {
                 method: 'POST',
                 headers: {
                     'Content-Type': 'application/x-www-form-urlencoded',
@@ -35,7 +37,9 @@ if (form) {
 
 async function fetchMessages() {
     try {
-        const response = await fetch('/api');
+        // const response = await fetch('http://localhost:8080/api'); //docker
+        const response = await fetch('/api'); //kubernetes
+
         const messages = await response.json();
 
         const messageList = document.getElementById('messages');

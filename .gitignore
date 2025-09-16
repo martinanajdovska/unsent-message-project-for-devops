@@ -1,1 +1,2 @@
 .env
+./kubernetes/postgres-secrets.yaml
